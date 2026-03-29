@@ -3,7 +3,7 @@ cask "watch-docker" do
   name "watch-docker"
   desc "Watch Docker - Docker Container Management and Monitoring Tool"
   homepage "https://github.com/jianxcao/watch-docker"
-  version "0.1.6"
+  version "0.1.7"
 
   livecheck do
     skip "Auto-generated on release."
@@ -14,22 +14,22 @@ cask "watch-docker" do
   on_macos do
     on_intel do
       url "https://github.com/jianxcao/watch-docker/releases/download/v#{version}/watch-docker_#{version}_darwin_x86_64.tar.gz"
-      sha256 "d33a801c05f256d77d7f574fe33cd5011237ee4709868ff01196bdd8718a3f3b"
+      sha256 "3239c57d27dc4e00a0c6bec14018972058efea7e6ec5fe97499e88ff703972bc"
     end
     on_arm do
       url "https://github.com/jianxcao/watch-docker/releases/download/v#{version}/watch-docker_#{version}_darwin_arm64.tar.gz"
-      sha256 "07aff8866a5e61b4ce26ca92765a031379b30f20f530a09daba00a6cb6ee22e5"
+      sha256 "be7684395f6900c56083d8df0578a979f723fa053449575897ca40ca54450cc7"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/jianxcao/watch-docker/releases/download/v#{version}/watch-docker_#{version}_linux_x86_64.tar.gz"
-      sha256 "3436390fe5bdfe8be6c2cf5d61eaf09837ee000a9834c7c2d698c2c6135fd186"
+      sha256 "87e7238c20b62c988ce48334d7d501de328fb780a92c7f80b12d32ee89ebfba7"
     end
     on_arm do
       url "https://github.com/jianxcao/watch-docker/releases/download/v#{version}/watch-docker_#{version}_linux_arm64.tar.gz"
-      sha256 "0fc0c12ecb2c246102870a32280956452cd64f60d9f4461aae42acb6f04b1444"
+      sha256 "a54fad1c5206f61d41c82b8f1f74814113df9ac45d6f8c7a7cfa69c6031be4e3"
     end
   end
 
@@ -42,12 +42,39 @@ cask "watch-docker" do
   end
 
   caveats do
-    "To start watch-docker as a service, you can create a launchd plist file at:"
-    "  ~/Library/LaunchAgents/com.watchdocker.plist"
+    "📦 安装完成！配置目录：~/.watch-docker"
     ""
-    "Or use the provided plist file from the installation directory."
+    "🚀 设置开机自启动："
     ""
-    "Configuration directory: ~/.watch-docker"
+    "1. 查找 watch-docker 安装路径："
+    "   which watch-docker"
+    ""
+    "2. 复制提供的 launchd 配置文件："
+    "   cp "$(brew --prefix)/Caskroom/watch-docker/*/com.watchdocker.plist" ~/Library/LaunchAgents/"
+    ""
+    "3. 编辑配置文件，确认二进制路径正确："
+    "   # 对于 Apple Silicon (M1/M2/M3):"
+    "   /opt/homebrew/bin/watch-docker"
+    "   # 对于 Intel Mac:"
+    "   /usr/local/bin/watch-docker"
+    ""
+    "4. 加载并启动服务："
+    "   launchctl load ~/Library/LaunchAgents/com.watchdocker.plist"
+    "   launchctl start com.watchdocker"
+    ""
+    "📝 服务管理命令："
+    "   启动: launchctl start com.watchdocker"
+    "   停止: launchctl stop com.watchdocker"
+    "   重启: launchctl kickstart -k gui/$(id -u)/com.watchdocker"
+    "   查看状态: launchctl list | grep watchdocker"
+    "   卸载自启: launchctl unload ~/Library/LaunchAgents/com.watchdocker.plist"
+    ""
+    "📖 查看日志："
+    "   tail -f ~/.watch-docker/stdout.log"
+    "   tail -f ~/.watch-docker/stderr.log"
+    ""
+    "⚙️ 默认访问：http://localhost:8080"
+    "   默认用户名/密码：admin/admin"
   end
 
   # No zap stanza required
