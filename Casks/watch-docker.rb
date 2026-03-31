@@ -14,22 +14,22 @@ cask "watch-docker" do
   on_macos do
     on_intel do
       url "https://github.com/jianxcao/watch-docker/releases/download/v#{version}/watch-docker_#{version}_darwin_x86_64.tar.gz"
-      sha256 "079bc0595a5c0a9fc8fa7535c11fedd2a4fa4a4f8bc8b27442b8f2cb5f9b1cf9"
+      sha256 "ef13077d7417cd932298a6f1363fb78705e08ff26749aeb3e0cb6fbd5db1c517"
     end
     on_arm do
       url "https://github.com/jianxcao/watch-docker/releases/download/v#{version}/watch-docker_#{version}_darwin_arm64.tar.gz"
-      sha256 "2da68fe2c298f9b875d8ea4552d39b4718b625a3ac31334e37aaac50c6d95bf9"
+      sha256 "3526fece2c5b4b58ff81f9dcf6ce9618f662e7f709eb02c34046e130b01dace9"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/jianxcao/watch-docker/releases/download/v#{version}/watch-docker_#{version}_linux_x86_64.tar.gz"
-      sha256 "c1055f0b821f4bf23bef0a5e72725b391f257b8617ac135f97549a3781dd1bfb"
+      sha256 "e8012daf8aa5227e3c92a8ddd76c17911a889d8b4aa450880267c7d344ab1940"
     end
     on_arm do
       url "https://github.com/jianxcao/watch-docker/releases/download/v#{version}/watch-docker_#{version}_linux_arm64.tar.gz"
-      sha256 "f44cb03cb0d7033d60d1c7e925b84442569665d3a23195977c894197e2e3ac18"
+      sha256 "6a246fab9cd2c9b7c3d928c4258aa85f4b0577f334e1b4edc1e150c178f409f1"
     end
   end
 
