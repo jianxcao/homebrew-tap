@@ -3,7 +3,7 @@ cask "watch-docker" do
   name "watch-docker"
   desc "Watch Docker - Docker Container Management and Monitoring Tool"
   homepage "https://github.com/jianxcao/watch-docker"
-  version "0.1.8"
+  version "0.1.10"
 
   livecheck do
     skip "Auto-generated on release."
@@ -14,22 +14,22 @@ cask "watch-docker" do
   on_macos do
     on_intel do
       url "https://github.com/jianxcao/watch-docker/releases/download/v#{version}/watch-docker_#{version}_darwin_x86_64.tar.gz"
-      sha256 "ef13077d7417cd932298a6f1363fb78705e08ff26749aeb3e0cb6fbd5db1c517"
+      sha256 "f047df7ed2e9c2695eca5b592d3426d1e43627eeb3945c02fcdc51e862cb03bc"
     end
     on_arm do
       url "https://github.com/jianxcao/watch-docker/releases/download/v#{version}/watch-docker_#{version}_darwin_arm64.tar.gz"
-      sha256 "3526fece2c5b4b58ff81f9dcf6ce9618f662e7f709eb02c34046e130b01dace9"
+      sha256 "eb2e2362d4c859e5ba9951c2cb0a01c66eca845f4a4663f526c556bea2bb1fcc"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/jianxcao/watch-docker/releases/download/v#{version}/watch-docker_#{version}_linux_x86_64.tar.gz"
-      sha256 "e8012daf8aa5227e3c92a8ddd76c17911a889d8b4aa450880267c7d344ab1940"
+      sha256 "836ee849593adb4c3372206ee9ac2178f513675d9058860167a9c4cc78d3db81"
     end
     on_arm do
       url "https://github.com/jianxcao/watch-docker/releases/download/v#{version}/watch-docker_#{version}_linux_arm64.tar.gz"
-      sha256 "6a246fab9cd2c9b7c3d928c4258aa85f4b0577f334e1b4edc1e150c178f409f1"
+      sha256 "340d301221e758e0b6c8a530b82a09ea73c43d533e1203a3c54bdaa52717cc52"
     end
   end
 
